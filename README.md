@@ -91,3 +91,6 @@ To run the project using Docker:
 # Build and start the containers
 docker-compose up --build
 
+🧑‍💻 Developer
+
+Developed by Farouk Mohamed This was my first full real-world project delivered to a client.
