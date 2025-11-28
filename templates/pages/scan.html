@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="bahrStoreSystem">
+
+          <!-- Start Scan Product -->
+          <div class="scan">
+              <h3 style="text-align:center">Scan Product</h3>
+              <video id="video" autoplay playsinline></video>
+              <canvas id="canvas" style="display:none"></canvas>
+          </div>
+          <!-- End Scan Product -->
+
+          <!-- Start Inputs Info Pro And Client -->
+          <div id="manual">
+              <input id="manualInput" placeholder="فحص id" />
+              <input id="customerName" placeholder="اسم العميل" style="margin-top:10px;" />
+              <input id="customerPhone" placeholder="رقم العميل" style="margin-top:10px;" />
+              <label for="discountInput">الخصم:</label>
+              <input type="number" id="discountInput" value="0">
+              <div class="btnScan" style="display:flex;gap:10px;margin-top:10px;">
+                <button id="manualBtn">اضــافة المـنتــج</button>
+                <button id="finishBtn">إنهـــاء الفاتــورة</button>
+                <button id="undoBtn" title="حذف آخر إضافة">حــذف اخــر منتــج</button>
+              </div>
+          <!-- End Inputs Info Pro And Client -->
+
+          </div>
+          
+          <p id="result">انــتظــار الاســكــان...</p>
+
+    </div>
+    
+    <!-- Start Toast Message -->
+    <div id="toast"></div>
+    <!-- End Toast Message -->
+    <!-- Start Scroll Button -->
+      <div id="btnScroll">^</div>
+    <!-- End Scroll Button -->
+
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+  <script src="{% static "js/scan.js" %}"></script>
+</body>
+</html>
+{% endblock content %}

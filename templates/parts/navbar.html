@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافة المنتجات والتعديل - Bahr Store</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+    <!-- Start Navbar -->
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="links">
+            <ul>
+                <a id="logoutBtn" href="/logout/">تسجيل الخروج</a>  
+                <li><a href="{% url "products" %}">اضافة منتج</a></li>
+                <li><a href="{% url "stores" %}">المخازن</a></li>
+                <li><a href="{% url "scan" %}">البيع</a></li>
+                <li><a href="{% url "sales" %}">المبيعات</a></li>
+                <li><a href="{% url "traderBills"%}">فواتيري</a></li>
+            </ul>
+        </div>
+        <h2><a href="{% url "index" %}">BAHR STORE</a></h2>
+    </div>
+    <!-- End Navbar -->

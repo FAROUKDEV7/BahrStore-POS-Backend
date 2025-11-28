@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="bahrStoreSystem">
+
+        <!-- Start Head -->
+        <div class="head">
+            <div class="mainTitle">
+                <h2>اضـــافــة المـنتجــــات</h2>
+            </div>
+        </div>
+        <!-- End Head -->
+
+        <!-- start inputs -->
+        <div class="inputs">
+            <input type="text" id="title" placeholder="ادخــل اسم المنتــــج">
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" name="" id="price" placeholder="الســعـر">
+                <input onkeyup="getTotal()" type="number" name="" id="taxes" placeholder="الضـرائــب">
+                <input onkeyup="getTotal()" type="number" name="" id="ads" placeholder="الاعــلانــات">
+                <input onkeyup="getTotal()" type="number" name="" id="discount" placeholder="الخصــم">
+                <small id="total">0</small>
+            </div>
+            <input type="number" name="" id="count" placeholder="العــدد">
+            <select id="category">
+                <option value="">اختر التصنيف</option>
+                <option value="هودى">هودى</option>
+                <option value="تيشرتات">تيشرتات</option>
+                <option value="كوتشيات">كوتشيات</option>
+                <option value="سليبر">سليبر</option>
+                <option value="بوكليت">بوكليت</option>
+                <option value="قمصان">قمصان</option>
+                <option value="جواكيت">جواكيت</option>
+                <option value="كروكسات">كروكسات</option>
+                <option value="كابات">كابات</option>
+                <option value="بناطيل جينز">بناطيل جينز</option>
+                <option value="بناطيل ميلتون">بناطيل ميلتون</option>
+                <option value="شربات">شربات</option>
+                <option value="ترنجات">ترنجات</option>
+                <option value="ملابس داخليه">ملابــس داخليــه</option>
+            </select>
+
+            <button id="btnCreate" type="submit">انشـــاء المنتــــج</button>  
+        </div>
+        <!-- End inputs -->
+
+        <!-- Start Output -->
+        <div class="outputs">
+            <div class="searchBlock">
+                <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="ابحـــث هنـــا">
+                <div class="btnSearch">
+                    <button onclick="getSearchMood(this.id)" type="submit" id="searchTitle">ابحث عن  طـريق اســم المنتــــج</button>
+                    <button onclick="getSearchMood(this.id)" type="submit" id="searchCategory">ابحث عن  طــريق التصــنـيف</button>
+                </div>
+            </div>
+            <div id="btnDelete"></div>
+            <table class="table">
+                <tr>
+                    <th>رقــم المنتــــج</th>
+                    <th>الاســـم</th>
+                    <th>الكــميــة</th>
+                    <th>الســعـر</th>
+                    <th>الضـرائــب</th>
+                    <th>الاعــلانــات</th>
+                    <th>الخصــم</th>
+                    <th>الاجمالى</th>
+                    <th>التصــنـيف</th>
+                    <th>QR</th>
+                    <th>تعــديـل</th>
+                    <th>حـــــذف</th>
+                </tr>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Toast Message -->
+        <div id="toast"></div>
+        <!-- End Toast Message -->
+
+        <!-- Scroll Button -->
+        <div id="btnScroll">^</div>
+        <!-- End Scroll Button -->
+
+    </div>
+    <!-- End System -->
+    <script src="{% static "js/main.js" %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+</body>
+</html>
+{% endblock content %}

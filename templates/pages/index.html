@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahr Store</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="bahrStoreSystem">
+
+        <!-- Head -->
+        <div class="headIndex">
+        <img class="logoMainPage" src="{% static "images/logo.png" %}" alt="">
+            <div class="mainTitleIndex">
+                <h2 class="text">Bahr Store</h2>
+                <p>product Management System</p>
+            </div>
+        </div>
+        <!-- End Head -->
+
+        <!-- Main Btn -->
+        <div class="mainBtn">
+            <a href="{% url "products" %}"><button>اضــافـــة المــنتجــات</button></a>
+            <a href="{% url "stores" %}"><button>الـــــــذهــــاب  إلــــى المـــخـــــازن</button></a>
+            <a href="{% url "scan" %}"><button>الـــــــذهــــاب  إلــــى الــبـيـــــــع</button></a>
+            <a href="{% url "sales" %}"><button>الـــــــذهــــاب  إلــــى المـبـيـعـــات</button></a>
+            <a href="{% url "traderBills" %}"><button>الـــــــذهــــاب  إلــــى فواتـــــــيري</button></a>
+        </div>
+        <!-- End Main Btn -->
+
+    </div>
+    <script src="{% static " js/main.js" %}"></script>
+</body>
+</html>

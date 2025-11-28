@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="bahrStoreSystem">
+        <!-- Start Head -->
+        <div class="head">
+            <div class="mainTitle">
+                <h2> فواتــير التجـــار</h2>
+            </div>
+        </div>
+        <!-- End Head -->
+
+        <!-- Start Form -->
+        <form id="billForm">
+
+            <div class="firstInfoInp">
+                <input type="text" id="traderName" placeholder="اسم التاجر" required>
+                <input type="text" id="products" placeholder="المنتجات" >
+                <input type="date" id="deliveryDate" placeholder="تاريخ التسليم" >
+                <input type="date" id="receiveDate" placeholder="تاريخ الاستلام" >
+            </div>
+
+            <input type="file" id="invoiceImage" accept="image/*">
+
+            <div class="price">
+              <input type="number" id="totalAmount" placeholder="المبلغ الأصلي" >
+              <input type="number" id="paidAmount" placeholder="المدفوع من المبلغ" >
+              <div id="remainingDisplay" class="remaining">0</div>
+            </div>
+            
+            <button type="submit">حفظ الفاتورة</button>
+            <button type="button" id="clearAll" class="danger">حذف الكل</button>
+        </form>
+        <!-- End Form -->
+
+        <!-- Start Search And print -->
+        <div class="tools">
+            <input type="search" id="searchInput" placeholder="بحث باسم التاجر أو المنتج">
+            <button id="downloadPdfBtn">طباعة جميع الفواتير</button>
+        </div>
+        <!-- End Search And print -->
+
+        <!-- Start Table -->
+        <table id="billsTable">
+            <thead>
+                <tr>
+                    <th>اسم التاجر</th>
+                    <th>المنتجات</th>
+                    <th>تاريخ الاستلام</th>
+                    <th>تاريخ التسليم</th>
+                    <th>المبلغ الأصلي</th>
+                    <th>المدفوع</th>
+                    <th>المتبقي</th>
+                    <th>صورة الفاتورة</th>
+                    <th>تعديل</th>
+                    <th>حذف</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <!-- End Table -->
+
+
+        <!-- Scroll Button -->
+        <div id="btnScroll">^</div>
+        <!-- End Scroll Button -->
+    </div>
+
+    <!-- Show img -->
+    <div id="popup"><img src="" alt="invoice"></div>
+
+    
+  <!-- مكتبة PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="{% static "js/traderBills.js" %}"></script>
+</body>
+</html>
+{% endblock content %}

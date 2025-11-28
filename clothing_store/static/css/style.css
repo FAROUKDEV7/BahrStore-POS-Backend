@@ -1,0 +1,902 @@
+/* basic style*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color : #222;
+    --second-color: #111;
+    --third-color: #000;
+    --main-btn-color : #0174a5 ;
+    --second-btn-color : rgb(196, 7, 7);
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background-color: var(--main-color);
+    color: white;
+}
+
+.bahrStoreSystem {
+    width: 80%;
+    margin: auto ;
+}
+
+
+/* index page */
+
+.headIndex {
+    text-align: center;
+    margin: 30px 0;
+}
+
+
+
+.headIndex .logoMainPage{
+    height: 150px;
+    width: 150px;
+}
+
+.mainTitleIndex {
+    text-transform: uppercase;
+    font-size: larger;
+}
+
+
+.mainTitleIndex p {
+    letter-spacing: 4px;
+}
+
+
+
+.mainBtn a {
+    text-decoration: none;
+}
+
+
+.mainBtn a button {
+    margin: 10px 0;
+}
+
+
+
+/* products page */
+.navbar{
+    position: fixed;
+    background-color: #111;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 1px 3px 11px 1px var(--main-color);
+}
+
+
+.navbar .links ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.navbar .links ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: 0.50s;
+}
+
+
+.navbar ul li a:hover {
+    color: #02acf5;
+}
+
+
+.navbar h2 a {
+    text-decoration: none;
+    color: white;
+    transition: 0.50s;
+}
+
+.navbar h2 a:hover {
+    color: #02acf5;
+}
+
+
+.navbar #logoutBtn {
+    background-color: var(--second-btn-color);
+    color:#fff;
+    border:none; 
+    padding:6px 12px; 
+    border-radius:8px; 
+    cursor:pointer;
+    transition: 0.50s;
+    border: none;
+    
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+
+.navbar #logoutBtn:hover {
+    background-color: rgb(253, 20, 20);
+}
+
+
+
+.head {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+
+.mainTitle {
+    padding-top: 80px;
+    text-transform: uppercase;
+    font-size: larger;
+}
+
+
+
+.mainTitle p{
+    letter-spacing: 4px;
+}
+
+
+
+/* inputs */
+
+input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--second-color);
+    color: white;
+    border-radius: 4px;
+    margin: 4px 0;
+    padding: 20px;
+    transition: 0.50s;
+}
+
+
+input:focus {
+    background-color: var(--third-color);
+    transform: scale(1.1);
+}
+
+
+.price {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.price #total {
+    background-color: var(--second-btn-color);
+    padding: 15px;
+    border-radius: 4px;
+    
+}
+
+
+.price #total::before {
+    content: "الاجمالى:";
+}
+
+
+.inputs select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;    
+    appearance: none; 
+    width: 100%;
+    padding: 20px;
+    margin: 4px 0;
+    border-radius: 4px;
+    background-color: var(--second-color);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    text-align: right;
+    direction: rtl;
+
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%230174a5' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    background-size: 18px;
+}
+
+.inputs select select:focus {
+    background-color: var(--third-color);
+}
+
+.inputs select option {
+  color: white;
+}
+
+
+button {
+    width: 100%;
+    background-color: var(--main-btn-color);
+    outline: none;
+    border: none;
+    margin: 4px 0;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: 0.50s;
+    font-size: large;
+    
+}
+
+
+button:hover {
+    background-color: #02acf5;
+    letter-spacing: 2px;
+}
+
+
+
+/* output */
+
+.btnSearch {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.btnSearch button {
+    width: 45%;
+}
+
+
+#btnDelete {
+    margin: 20px 0;
+}
+
+
+#btnDelete button {
+    background-color: var(--second-btn-color);
+    font-size: large;
+}
+
+
+#btnDelete button:hover {
+    background-color: rgb(253, 20, 20);
+}
+
+
+table {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+table th {
+    text-transform: uppercase;
+}
+
+th , td {
+    padding: 5px;
+}
+
+table #delete {
+    background-color: var(--second-btn-color);
+}
+
+
+table #delete:hover {
+    background-color: rgb(253, 20, 20);
+    
+}
+
+table button:hover {
+    letter-spacing: 0.1px;
+}
+
+/* toast message */
+#toast {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: none;
+    z-index: 9999;
+    font-size: 15px;
+    animation: fadeInOut 3s forwards;
+}
+
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+
+
+/* Scan Page */
+.scan {
+    padding: 80px 0;
+}
+
+
+#video {
+    width:100%;
+    max-width:480px;
+    border:2px solid #333;
+    display:block;
+    margin:auto
+}
+
+
+#result{
+    text-align:center
+}
+
+
+.small{
+    font-size:13px;
+    color:#ddd;
+    margin-top:6px
+}
+
+
+input:focus{
+    transform: none;
+} 
+
+
+#undoBtn {
+    background-color: var(--second-btn-color);
+}
+
+
+#undoBtn:hover {
+    background-color: rgb(253, 20, 20);
+}
+
+
+.btnProduct button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 10%;
+}
+
+
+
+
+
+
+/* stores page */
+
+.head .mainText {
+    padding-top: 80px;
+}
+
+
+.storeContainer {
+    width: 95%;
+    margin: 30px auto;
+    background-color: rgb(17, 17, 17);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+}
+
+
+.storeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.storeHeader h2 {
+    color: var(--main-btn-color);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+select.dropdown {
+    padding: 10px 15px;
+    border: 1px solid var(--main-btn-color);
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+select.dropdown:hover {
+    border-color: #0174a5;
+    box-shadow: 0 0 5px rgba(1,116,165,0.3);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+
+th {
+    background-color: var(--main-btn-color);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+}
+
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eeeeee10;
+    font-size: 15px;
+}
+
+
+tr:hover {
+    background-color: #f1faff0e;
+    transition: 0.3s;
+}
+
+
+img.product-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--main-btn-color);
+}
+
+
+.no-products {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-size: 18px;
+}
+
+
+/* login page */
+.login {
+    background-color: var(--main-color);
+    color: #fff;
+    font-family: "Cairo", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.login-box {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 10px var(--main-btn-color);
+}
+
+
+.login-box h2 {
+    color: #00b7ff;
+}
+
+
+.login-box p {
+    margin-bottom: 15px;
+}
+
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background: var(--second-color);
+    color: #fff;
+}
+
+
+.login-box input:focus {
+    background-color: var(--third-color);
+}
+
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--main-btn-color);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.login-box button:hover {
+    background: #02acf5;
+}
+
+
+.error {
+    color: #ff4c4c;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* sales page */
+
+.totalBox {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--main-btn-color);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+#clearSalesBtn {
+    background-color: var(--second-btn-color);
+}
+
+
+#clearSalesBtn:hover {
+    background-color: rgb(253, 20, 20);
+}
+
+
+
+/* sales page */
+.edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 520px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 9999;
+}
+
+
+.edit-modal h3 { 
+    text-align: center; 
+    color: var(--main-btn-color); 
+    margin-bottom: 10px; 
+}
+
+
+.edit-row { 
+    display: flex; 
+    gap:8px; align-items:center; 
+    margin-bottom: 8px; 
+}
+
+
+.edit-row input[type="text"]{ 
+    flex: 1; 
+    padding: 6px; 
+}
+
+
+.edit-row input[type="number"]{ 
+    width: 90px; 
+    padding: 6px; 
+    text-align: center; 
+}
+
+
+.small { 
+    font-size: 13px;
+     color: #555; 
+}
+
+
+.btn { 
+    padding: 7px 10px;
+     border-radius: 8px;
+     border: none; 
+    cursor: pointer; 
+}
+
+
+.btn-save { 
+    background: var(--main-btn-color); 
+    color: #fff; 
+}
+
+
+.btn-save:hover{
+    background-color: #02acf5;
+}
+.btn-filter-del{
+    background-color: var(--second-btn-color);
+    color: white;
+}
+
+.btn-filter-del:hover { 
+    background-color: rgb(253, 20, 20);
+}
+
+
+.btn-cancel:hover {
+    background-color: #ececec;
+}
+
+
+.btn-del { 
+    background: var(--second-btn-color); 
+    color: #fff; 
+}
+
+
+.btn-del:hover{
+    background-color: rgb(253, 20, 20);
+}
+
+
+.btn-del-item { 
+    background-color: var(--second-btn-color);
+    padding: 5px 0;
+}   
+
+
+.btn-print { 
+    background: #2ecc71;
+    color: #fff; 
+}
+
+
+.btn-print:hover{
+    background-color: #2ae779;
+}
+
+
+.controls button { 
+    margin:2px; 
+}
+
+
+.product-list { 
+    max-width: 340px; 
+    word-break: break-word; 
+}
+
+
+@media (max-width:600px){
+     .edit-modal{ width: 95%; 
+    } 
+    .product-list{ max-width:200px;
+    } }
+
+
+/* trader page */
+.firstInfoInp {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.remaining {
+    padding: 10px;
+    border-radius: 4px;
+    background: var(--second-btn-color);
+}
+
+
+.remaining::before {
+    content: "المتبقى:";
+}
+
+
+
+
+#popup {
+  position: fixed;
+  display: none;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+
+#popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+
+.danger {
+    background-color: var(--second-btn-color);
+}
+
+
+.danger:hover {
+    background-color: rgb(253, 20, 20);
+}
+
+
+
+
+/* scroll button */
+
+#btnScroll {
+    position: fixed;
+    background-color: var(--main-btn-color);
+    color: white;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: 0.50s;
+    display: none;
+}
+
+
+#btnScroll:hover {
+    background-color: #02a6ec;
+    transform: scale(1.1);
+}
+
+
+/* responsive */
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+
+.navbar .links ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: max-height 0.3s ease;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+  }
+
+    .menu-icon {
+        display: block;
+  }
+
+    .navbar .links ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #111;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .navbar .links ul.active {
+        max-height: 400px;
+        padding: 10px 0;
+    }
+
+    .navbar .links ul li {
+        width: 100%;
+    }
+
+    .navbar .links ul li a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        border-bottom: 1px solid #222;
+    }
+
+
+    .navbar h2 {
+        display: none;
+    }
+
+    input, select, button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .bahrStoreSystem {
+        width: 95%;
+    }
+
+    table {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+
+    th, td {
+        padding: 8px;
+    }
+
+
+    .price {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .storeHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .login-box {
+        width: 90%;
+    }
+}
+
+
+
+
+
+

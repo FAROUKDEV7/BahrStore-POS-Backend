@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="bahrStoreSystem">
+
+        <!-- Start Head -->
+        <div class="head">
+            <div class="mainTitle">
+                <h2> سجــــل المـبـيـعـــات</h2>
+            </div>
+        </div>
+        <!-- End Head -->
+
+        <!-- Start Search -->
+        <div style="text-align:center; margin-bottom:12px;">
+            <input type="text" id="searchInput" placeholder="بحــث باسم العميــل أو رقــم العميــل أو اسم المنتــج">
+        </div>
+        <!-- End Search -->
+
+        <!-- Start Date Filters -->
+        <div style="text-align:center; margin-bottom:12px; display:flex; justify-content:center; gap:8px; flex-wrap:wrap;">
+            <select id="predefinedDateFilter" style="padding:20px; width: 100%; border-radius: 4px; background-color: #111; outline: none; border:none; color: white">
+                <option value="">كل المبيعات</option>
+                <option value="1d">اليوم</option>
+                <option value="7d">الأسبوع</option>
+                <option value="14d">أسبوعين</option>
+                <option value="21d">3 أسابيع</option>
+                <option value="1m">الشهر</option>
+                <option value="2m">شهرين</option>
+                <option value="3m">3 أشهر</option>
+                <option value="6m">6 أشهر</option>
+                <option value="1y">سنة</option>
+                <option value="2y">سنتين</option>
+                <option value="5y">5 سنوات</option>
+                <option value="10y">10 سنوات</option>
+            </select>
+
+            <input type="date" id="dateFrom" >
+            <input type="date" id="dateTo">
+            <div class="btnFilter" style="display: flex; width: 100%; gap:10px;">
+                <button id="applyDateFilter" class="btn">تطبيق الفلتر</button>
+                <button id="clearDateFilter" class="btn btn-filter-del" >مسح الفلتر</button>
+            </div>
+            
+        </div>
+        <!-- End Date Filters -->
+
+        <!-- Start Table -->
+        <table id="salesTable" style="width:100%; border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th>اسم العميل</th>
+                    <th>رقم العميل</th>
+                    <th>التاريخ</th>
+                    <th>الوقت</th>
+                    <th>المنتجات</th>
+                    <th>الخصـــم</th>
+                    <th>الإجمالي</th>
+                    <th>إجراءات</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <!-- End Table -->
+
+        <div class="totalBox" id="totalSales" style="margin-top:12px; font-weight:bold; text-align:center;">إجمالي المبيعات: 0 جنيه</div>
+
+        <div style="text-align:center; margin-top:12px;">
+          <button id="clearSalesBtn" class="btn-delete">مسح سجل المبيعات</button>
+        </div>
+    </div>
+
+    <!-- Start Scroll Button -->
+      <div id="btnScroll">^</div>
+    <!-- End Scroll Button -->
+
+    <!-- باقي الكود كما هو بدون أي تغيير -->
+    <script src="{% static "js/sales.js" %}"></script>
+
+</body>
+</html>
+{% endblock content %}
